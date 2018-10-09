@@ -262,3 +262,23 @@ x = 0
 while x < 3:
     print("smaller " + str(x))
     x+=1
+
+
+temperatures = [10, -20, -289, 100]
+
+
+def c_to_f(c):
+    if c < -273.15:
+        return ""
+    else:
+        f = c * 9/5 + 32
+        return f
+
+
+with open("tempfile.txt","w") as tempfile:
+    for t in temperatures:
+        if t > -273.15:
+            print(c_to_f(t))
+            tempfile.write(str(c_to_f(t)) + "\n")
+
+
